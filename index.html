@@ -7,31 +7,48 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <!--<script src="jquery.min.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <!--<script src="js/angular-route.min.js"></script>-->
     <script src="app.js"></script>
 </head>
 
-<body>
+<body ng-controller="MainController">
+    <div class="header">
+        <div class="container">
+            <h1 class="title">{{title}}</h1>
+
+        </div>
+    </div>
+    <div ng-view></div>
     <div class="container">
-        <div ng-controller="MainController">
-            <h1>{{title}}</h1>
+        <div>
             <div class="row">
                 <div class="col-lg-12">
                     <h3>About Charecters </h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
+            <div class="row margin-align">
+                <div class="col-lg-6">
                     <div class="input-group">
                         <span class="input-group-addon">
                     <span class="glyphicon glyphicon-search"></span>
                         </span>
-                        <input type="text" class="form-control" ng-model="searchInput">
+                        <input type="text" class="form-control" ng-model="searchInput" placeholder="Search by name">
                     </div>
+                </div>
+                <div class="col-lg-4">
+                    <!--<div class="label label-info" ng-repeat="letter in alphabetic">
+                        <span hre ng-click="alphabeticFilters()">{{letter}}</span>
+                    </div>-->
+                </div>
+                <div class="col-lg-2">
+                    <select ng-model="sortOption" class="form-control order-by" ng-options="(option | uppercase) for option in options | uppercase">
+                        <option value="">Order By</option>
+                    </select>
                 </div>
             </div>
             <div class="row text-center">
-                <div class="col-md-3 col-sm-6" ng-repeat="character in characters | filter:searchInput">
+                <div class="col-md-3 col-sm-6" ng-repeat="character in characters | filter:searchInput | orderBy: sortOption">
                     <div class="thumbnail">
                         <img src="http://placehold.it/400x200" alt="">
                         <div class="caption">
