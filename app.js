@@ -6,6 +6,7 @@ app.controller('MainController', ['$scope', '$http', // <- added quotes
         $scope.options = ['name', 'gender'];
         //$scope.alphabetic = ['All', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
         $scope.title;
+        //$scope.charecterTitles = [];
         $scope.characters = [];
         $http.get("http://www.anapioficeandfire.com/api/books")
             .then(function(response) {
@@ -13,15 +14,20 @@ app.controller('MainController', ['$scope', '$http', // <- added quotes
                 angular.forEach(response.data[0].characters, function(value, key) {
                     $http.get(response.data[0].characters[key])
                         .then(function(result) {
+
                             $scope.characters.push({
                                 "name": result.data.name,
                                 //"playedBy": result.data.playedBy,
-                                "gender": result.data.gender
+                                "gender": result.data.gender,
+                                "titles": result.data.titles
                             });
                         });
                 });
             });
 
+        //get charecterTitles
+        // $scope.getTitles = function() {
 
+        // }
     }
 ]);
