@@ -50,23 +50,17 @@
             <div class="row text-center">
                 <div class="col-md-3 col-sm-6" ng-repeat="character in characters | filter:searchInput | orderBy: sortOption">
                     <div class="thumbnail titles-list-section-parent">
-                        <img src="http://placehold.it/400x200" alt="">
+                        <img src="http://placehold.it/400x200/adaac1/ffffff" alt="">
                         <div class="caption">
                             <h4>{{character.name}}</h4>
-                            <p class="label label-success">{{character.gender}}</p>
-
-
+                            <p class="label label-custom">{{character.gender}}</p>
                             <p>
-                                <input class="btn btn-primary btn-xs" type="button" value="Show modal" ng-click="showModal(character)" />
-                                <!--<a href="#"  ng-click="toggle($event, character)">Titles Info</a>--><a href="#" class="btn btn-default btn-xs">About TV Series</a>
+                                <input class="btn btn-primary btn-xs" type="button" value="Titles Info" ng-click="showTitles(character)" ng-model="titlesDetails" />
+                                <input class="btn btn-default btn-xs" type="button" value="About TV Series" ng-click="showTvSeries(character)" ng-model="tvSeriesDetails" />
                             </p>
 
                         </div>
-                        <!--<div class="titles-list-section" ng-if="visible">
-                            <ul class="list-group">
-                                <li class="list-group-item" ng-repeat="charecterTitle in charecterTitles">{{charecterTitle}}</li>
-                            </ul>
-                        </div>-->
+
                     </div>
                 </div>
             </div>

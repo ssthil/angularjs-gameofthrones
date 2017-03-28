@@ -1,0 +1,15 @@
+<!-- TV Series -->
+<div>
+    <div class="modal-header modal-header-bg">
+        <h3 class="modal-title">Tv Series</h3>
+    </div>
+    <div class="modal-body">
+        <p ng-show="character.tvSeries.length === 0">No tv series available</p>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="charecterTvSeries in character.tvSeries">{{charecterTvSeries}}</li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning btn-sm" ng-click="cancel()">Cancel</button>
+    </div>
+</div>

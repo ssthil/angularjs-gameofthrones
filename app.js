@@ -18,23 +18,28 @@ app.controller('MainController', ['$scope', '$http', '$modal', // <- added quote
                             $scope.characters.push({
                                 "name": result.data.name,
                                 "gender": result.data.gender,
-                                "titles": result.data.titles
+                                "titles": result.data.titles,
+                                "tvSeries": result.data.tvSeries
                             });
                         });
                 });
             });
 
-        $scope.visible = false;
-        $scope.toggle = function(event, obj) {
-            //($scope.visible === false) ? $scope.visible = true: $scope.visible = false;
-            //$scope.visible = !$scope.visible;
-            console.log(obj.titles);
-            // $scope.charecterTitles = obj.titles;
-        };
-
-        $scope.showModal = function(character) {
+        $scope.showTitles = function(character) {
             var modalInstance = $modal.open({
-                templateUrl: 'myModal.html',
+                templateUrl: 'modalTitles.html',
+                controller: 'ModalDialogController',
+                resolve: {
+                    characters: function() {
+                        return character;
+                    }
+                }
+            });
+        }
+
+        $scope.showTvSeries = function(character) {
+            var modalInstance = $modal.open({
+                templateUrl: 'modalTvSeries.html',
                 controller: 'ModalDialogController',
                 resolve: {
                     characters: function() {

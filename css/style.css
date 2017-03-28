@@ -42,15 +42,27 @@
     color: #fff !important;
 }
 
+.modal-header-bg {
+    background: #6a72bb;
+}
 
-/*.label {
-    border-radius: 0;
-    text-shadow: none;
-    font-size: 12px;
-    font-weight: normal;
-    padding: 3px 5px 3px;
-    margin: 2px;
-    cursor: pointer;
+.label {
     display: inline-block;
-    background-color: #8283a2 !important
-}*/
+    padding: .5em .9em .3em;
+    font-size: 85%;
+    font-weight: normal;
+    line-height: 1;
+    color: #ffffff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .15em;
+}
+
+.label-custom {
+    background-color: #e68787;
+}
+
+.modal-footer {
+    padding: 10px 15px;
+}
