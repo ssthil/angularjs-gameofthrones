@@ -1,12 +1,12 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['ui.bootstrap']);
 
-app.controller('MainController', ['$scope', '$http', // <- added quotes
-    function($scope, $http) {
+app.controller('MainController', ['$scope', '$http', '$modal', // <- added quotes
+    function($scope, $http, $modal) {
         // order by options
         $scope.options = ['name', 'gender'];
         //$scope.alphabetic = ['All', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
         $scope.title;
-        //$scope.charecterTitles = [];
+        $scope.charecterTitles = [];
         $scope.characters = [];
         $http.get("http://www.anapioficeandfire.com/api/books")
             .then(function(response) {
@@ -17,7 +17,6 @@ app.controller('MainController', ['$scope', '$http', // <- added quotes
 
                             $scope.characters.push({
                                 "name": result.data.name,
-                                //"playedBy": result.data.playedBy,
                                 "gender": result.data.gender,
                                 "titles": result.data.titles
                             });
@@ -25,9 +24,31 @@ app.controller('MainController', ['$scope', '$http', // <- added quotes
                 });
             });
 
-        //get charecterTitles
-        // $scope.getTitles = function() {
+        $scope.visible = false;
+        $scope.toggle = function(event, obj) {
+            //($scope.visible === false) ? $scope.visible = true: $scope.visible = false;
+            //$scope.visible = !$scope.visible;
+            console.log(obj.titles);
+            // $scope.charecterTitles = obj.titles;
+        };
 
-        // }
+        $scope.showModal = function(character) {
+            var modalInstance = $modal.open({
+                templateUrl: 'myModal.html',
+                controller: 'ModalDialogController',
+                resolve: {
+                    characters: function() {
+                        return character;
+                    }
+                }
+            });
+        }
     }
 ]);
+
+app.controller("ModalDialogController", function($scope, $modalInstance, characters) {
+    $scope.character = characters;
+    $scope.cancel = function() {
+        $modalInstance.close();
+    };
+});

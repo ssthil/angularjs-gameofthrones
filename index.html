@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <!--<script src="jquery.min.js"></script>-->
     <script src="js/angular.min.js"></script>
+    <script src="js/ui-bootstrap.js"></script>
     <!--<script src="js/angular-route.min.js"></script>-->
     <script src="app.js"></script>
 </head>
@@ -48,7 +49,7 @@
             </div>
             <div class="row text-center">
                 <div class="col-md-3 col-sm-6" ng-repeat="character in characters | filter:searchInput | orderBy: sortOption">
-                    <div class="thumbnail">
+                    <div class="thumbnail titles-list-section-parent">
                         <img src="http://placehold.it/400x200" alt="">
                         <div class="caption">
                             <h4>{{character.name}}</h4>
@@ -56,12 +57,16 @@
 
 
                             <p>
-                                <a href="#" class="btn btn-primary btn-xs" ng-click="getTitles(index)">Titles Info</a> <a href="#" class="btn btn-default btn-xs">About TV Series</a>
+                                <input class="btn btn-primary btn-xs" type="button" value="Show modal" ng-click="showModal(character)" />
+                                <!--<a href="#"  ng-click="toggle($event, character)">Titles Info</a>--><a href="#" class="btn btn-default btn-xs">About TV Series</a>
                             </p>
-                            <ul>
-                                <li ng-repeat="charecterTitle in character.titles">{{charecterTitle}}</li>
-                            </ul>
+
                         </div>
+                        <!--<div class="titles-list-section" ng-if="visible">
+                            <ul class="list-group">
+                                <li class="list-group-item" ng-repeat="charecterTitle in charecterTitles">{{charecterTitle}}</li>
+                            </ul>
+                        </div>-->
                     </div>
                 </div>
             </div>

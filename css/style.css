@@ -13,6 +13,35 @@
     color: #fb556a;
 }
 
+.titles-list-section-parent {
+    position: relative;
+}
+
+.titles-list-section {
+    transition: all linear 0.5s;
+    background-color: transparent;
+    height: 50px;
+    width: 250px;
+    position: absolute;
+    top: 0;
+    left: 50px;
+}
+
+.ng-hide {
+    height: 0;
+    width: 100px;
+    background-color: transparent;
+    top: -200px;
+    left: 200px;
+}
+
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+    background: #31899e;
+    color: #fff !important;
+}
+
 
 /*.label {
     border-radius: 0;
