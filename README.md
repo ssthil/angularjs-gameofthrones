@@ -33,4 +33,6 @@ https://angularjs-gameofthrones.herokuapp.com/
 In Windows open the Run window (Win + R):
 `C:\Program Files (x86)\Google\Chrome\Application\chrome.exe  --allow-running-insecure-content`
 now you can run the web url which would work with warning rather than blocker.
+## OR
+https://github.com/ssthil/angularjs-gameofthrones/blob/master/mixed-content-allow-in-chrome.png
 
