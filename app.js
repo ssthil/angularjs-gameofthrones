@@ -25,26 +25,16 @@ app.controller('MainController', ['$scope', '$http', '$modal', // <- added quote
                 });
             });
 
+        //html files for display Titles and TV Series
         $scope.templateUrls = {
             templateUrlTitle: "modalTitles.html",
             templateUrlTvSeries: "modalTvSeries.html",
         }
         $scope.modalDialogController = "ModalDialogController";
-        $scope.showTitles = function(character) {
+        //modal window for display Titles and TV Series
+        $scope.showModalWindow = function(character, htmlUrl) {
             var modalInstance = $modal.open({
-                templateUrl: $scope.templateUrls.templateUrlTitle,
-                controller: $scope.modalDialogController,
-                resolve: {
-                    characters: function() {
-                        return character;
-                    }
-                }
-            });
-        }
-
-        $scope.showTvSeries = function(character) {
-            var modalInstance = $modal.open({
-                templateUrl: $scope.templateUrls.templateUrlTvSeries,
+                templateUrl: htmlUrl,
                 controller: $scope.modalDialogController,
                 resolve: {
                     characters: function() {

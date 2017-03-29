@@ -55,8 +55,8 @@
                             <h4>{{character.name}}</h4>
                             <p class="label label-custom">{{character.gender}}</p>
                             <p>
-                                <input class="btn btn-primary btn-xs" type="button" value="Titles Info" ng-click="showTitles(character)" ng-model="titlesDetails" />
-                                <input class="btn btn-default btn-xs" type="button" value="About TV Series" ng-click="showTvSeries(character)" ng-model="tvSeriesDetails" />
+                                <input class="btn btn-primary btn-xs" type="button" value="Titles Info" ng-click="showModalWindow(character, templateUrls.templateUrlTitle)" ng-model="titlesDetails" />
+                                <input class="btn btn-default btn-xs" type="button" value="About TV Series" ng-click="showModalWindow(character, templateUrls.templateUrlTvSeries)" ng-model="tvSeriesDetails" />
                             </p>
 
                         </div>
