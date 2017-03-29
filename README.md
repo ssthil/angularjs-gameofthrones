@@ -1,6 +1,13 @@
 # Angularjs- Game of Thrones
 a simple app has built using AngularJS and `anapioficeandfire.com/api` to show the detailed information of the Game of Thrones 
 
+### Overview
+- Character's name displays with gender
+- Titles related to the character
+- TV Series related to the Character
+- Search by character name
+- Filter by character name and gender
+
 ## How to install
 - git clone https://github.com/ssthil/angularjs-gameofthrones.git
 - cd angularjs-gameofthrones
