@@ -25,10 +25,15 @@ app.controller('MainController', ['$scope', '$http', '$modal', // <- added quote
                 });
             });
 
+        $scope.templateUrls = {
+            templateUrlTitle: "modalTitles.html",
+            templateUrlTvSeries: "modalTvSeries.html",
+        }
+        $scope.modalDialogController = "ModalDialogController";
         $scope.showTitles = function(character) {
             var modalInstance = $modal.open({
-                templateUrl: 'modalTitles.html',
-                controller: 'ModalDialogController',
+                templateUrl: $scope.templateUrls.templateUrlTitle,
+                controller: $scope.modalDialogController,
                 resolve: {
                     characters: function() {
                         return character;
@@ -39,8 +44,8 @@ app.controller('MainController', ['$scope', '$http', '$modal', // <- added quote
 
         $scope.showTvSeries = function(character) {
             var modalInstance = $modal.open({
-                templateUrl: 'modalTvSeries.html',
-                controller: 'ModalDialogController',
+                templateUrl: $scope.templateUrls.templateUrlTvSeries,
+                controller: $scope.modalDialogController,
                 resolve: {
                     characters: function() {
                         return character;
