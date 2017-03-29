@@ -11,13 +11,19 @@ a simple app has built using AngularJS and `anapioficeandfire.com/api` to show t
 ## How to install
 - git clone https://github.com/ssthil/angularjs-gameofthrones.git
 - cd angularjs-gameofthrones
-- npm install
-- node server.js
+### Installing Dependencies
+```
+npm install
+```
+### Running the Application during Development
+- Run `node server.js`.
+- Navigate your browser to http://localhost:3000 to see the application 
+  running.
 
-### Continuous Integration
+#### Continuous Integration
 https://github.com/ssthil/angularjs-gameofthrones.git
 
-### Continuous Deployment
+#### Continuous Deployment
 https://angularjs-gameofthrones.herokuapp.com/
 
 ## Demo URL
