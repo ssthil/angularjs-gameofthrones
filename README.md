@@ -20,10 +20,10 @@ npm install
 - Navigate your browser to http://localhost:3000 to see the application 
   running.
 
-#### Continuous Integration
+### Continuous Integration
 https://github.com/ssthil/angularjs-gameofthrones.git
 
-#### Continuous Deployment
+### Continuous Deployment
 https://angularjs-gameofthrones.herokuapp.com/
 
 ## Demo URL
