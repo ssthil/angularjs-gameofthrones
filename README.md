@@ -14,6 +14,12 @@ a simple app has built using AngularJS and `anapioficeandfire.com/api` to show t
 - npm install
 - node server.js
 
+### Continuous Integration
+https://github.com/ssthil/angularjs-gameofthrones.git
+
+### Continuous Deployment
+https://angularjs-gameofthrones.herokuapp.com/
+
 ## Demo URL
 https://angularjs-gameofthrones.herokuapp.com/
 - since `anapioficeandfire.com/api` is running in http protocol where application server is running in https so we would expect Mixed Content blocker. For testing we can ignore this as warning and excute it.
