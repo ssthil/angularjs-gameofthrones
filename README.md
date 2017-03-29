@@ -1,5 +1,5 @@
 # Angularjs- Game of Thrones
-a simple app has built with AngularJS and `anapioficeandfire.com/api` to show the detailed information of the Game of Thrones 
+a simple app has built using AngularJS and `anapioficeandfire.com/api` to show the detailed information of the Game of Thrones 
 
 ## How to install
 - git clone https://github.com/ssthil/angularjs-gameofthrones.git
@@ -9,7 +9,7 @@ a simple app has built with AngularJS and `anapioficeandfire.com/api` to show th
 
 ## Demo URL
 https://angularjs-gameofthrones.herokuapp.com/
-- since `anapioficeandfire.com/api` is running in http protocol we would expect Mixed Content blocker. So, for time being you can ignore this as warning and excute it.
+- since `anapioficeandfire.com/api` is running in http protocol where application server is running in https so we would expect Mixed Content blocker. For testing we can ignore this as warning and excute it.
 ### Steps to allow the mixed content
 In Windows open the Run window (Win + R):
 `C:\Program Files (x86)\Google\Chrome\Application\chrome.exe  --allow-running-insecure-content`
