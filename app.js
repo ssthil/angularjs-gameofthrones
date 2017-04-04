@@ -8,7 +8,7 @@ app.controller('MainController', ['$scope', '$http', '$modal', // <- added quote
         $scope.title;
         $scope.charecterTitles = [];
         $scope.characters = [];
-        $http.get("http://www.anapioficeandfire.com/api/books")
+        $http.get("https://www.anapioficeandfire.com/api/books")
             .then(function(response) {
                 $scope.title = response.data[0].name;
                 angular.forEach(response.data[0].characters, function(value, key) {
