@@ -48,6 +48,7 @@
                 </div>
             </div>
             <div class="row text-center">
+                <div class="text-danger">{{error}}</div>
                 <div class="col-md-3 col-sm-6" ng-repeat="character in characters | filter:searchInput | orderBy: sortOption">
                     <div class="thumbnail titles-list-section-parent">
                         <img src="https://dummyimage.com/400x200/bdbdbd/fff" alt="">
