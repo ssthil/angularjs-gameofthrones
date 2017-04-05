@@ -13,17 +13,18 @@ app.controller('MainController', ['$scope', '$http', '$modal', // <- added quote
             $scope.title = response.data[0].name;
             angular.forEach(response.data[0].characters, function(value, key) {
                 $http.get(response.data[0].characters[key])
-                    .then(function(result) {
-
-                        $scope.characters.push({
-                            "name": result.data.name,
-                            "gender": result.data.gender,
-                            "titles": result.data.titles,
-                            "tvSeries": result.data.tvSeries
-                        });
-                    });
+                    .then(charactersInfo, errorWhileFetch);
             });
         };
+
+        var charactersInfo = function(result) {
+            $scope.characters.push({
+                "name": result.data.name,
+                "gender": result.data.gender,
+                "titles": result.data.titles,
+                "tvSeries": result.data.tvSeries
+            });
+        }
 
         var errorWhileFetch = function(reason) {
             $scope.error = "Could not fetch the required data" + reason;
